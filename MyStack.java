@@ -4,7 +4,7 @@
 
 // package mystack;
 
-/**h
+/**
  *
  * @author Riska
  */
@@ -130,13 +130,13 @@ public class MyStack {
 
         public int[] value;
         public int top;
-        public int size;
+        public int size; // Tak terpakai... 🤔
 
         public StackArray() {
             // Implementasi konstruktor
             this.value = new int[mymax];
             this.top = 0;
-            this.size = mymax - 1;
+            this.size = mymax - 1; // Tak terpakai... 🤔
         }
 
         // Implementasi isEmpty() dan isFull()
@@ -177,7 +177,7 @@ public class MyStack {
 
         public int peek() {
             if (!isEmpty())
-                return this.value[size - 1];
+                return this.value[this.top - 1];
             else
                 System.out.println("Stack kosong...");
             return -1;
