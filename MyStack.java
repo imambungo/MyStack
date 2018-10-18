@@ -264,9 +264,11 @@ public class MyStack {
         }
         binaryStack.push(1);
 
+        String binary = "";
         while (!binaryStack.isEmpty()) {
-            System.out.print(binaryStack.pop());
+            // System.out.print(binaryStack.pop());
+            binary += binaryStack.pop();
         }
-        System.out.println();
+        System.out.println(binary);
     }
 }
