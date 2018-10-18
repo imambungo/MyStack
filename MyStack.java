@@ -270,5 +270,31 @@ public class MyStack {
             binary += binaryStack.pop();
         }
         System.out.println(binary);
+
+        // Sorting array
+        int[] arr = { 8, 7, 6, 5, 4, 7, 4, 3, 1, 3, -2 };
+
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        sort(arr, 11);
+
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
+
+    public static void sort(int[] arr, int stackSize) {
+        for (int i = 0; i < stackSize - 1; i++) {
+            for (int j = 0; j < stackSize - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
     }
 }
