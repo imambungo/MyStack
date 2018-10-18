@@ -252,5 +252,21 @@ public class MyStack {
         sa2.sort();
 
         sa2.printStack();
+
+        printBinary(156);
+    }
+
+    static void printBinary(int decimal) {
+        StackArray binaryStack = new StackArray();
+        while (decimal != 1) {
+            binaryStack.push(decimal % 2);
+            decimal /= 2;
+        }
+        binaryStack.push(1);
+
+        while (!binaryStack.isEmpty()) {
+            System.out.print(binaryStack.pop());
+        }
+        System.out.println();
     }
 }
