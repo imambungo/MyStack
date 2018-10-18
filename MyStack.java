@@ -126,7 +126,7 @@ public class MyStack {
     }
 
     public static class StackArray {
-        public int mymax = 5;
+        public int mymax = 10;
 
         public int[] value;
         public int top;
@@ -193,6 +193,17 @@ public class MyStack {
             System.out.println("]");
         }
 
+        public void sort() {
+            for (int i = 0; i < top - 1; i++) {
+                for (int j = 0; j < top - i - 1; j++) {
+                    if (this.value[j] > this.value[j + 1]) {
+                        int temp = this.value[j];
+                        this.value[j] = this.value[j + 1];
+                        this.value[j + 1] = temp;
+                    }
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -219,5 +230,27 @@ public class MyStack {
         System.out.println("Isi teratas stack list = " + sa.peek());
         temp = sa.pop();
         System.out.println("Isi teratas stack list = " + sa.peek());
+
+        // StackArray baru utk testing sorting stack
+        StackArray sa2 = new StackArray();
+
+        // Push 10-1
+        for (int i = 10; i > 0; i--) {
+            sa2.push(i);
+        }
+
+        sa2.printStack();
+
+        // Pop 5 kali
+        for (int i = 0; i < 5; i++) {
+            sa2.pop();
+        }
+
+        sa2.printStack();
+
+        // Sorting stacknya
+        sa2.sort();
+
+        sa2.printStack();
     }
 }
